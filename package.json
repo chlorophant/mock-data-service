@@ -1,0 +1,28 @@
+{
+  "name": "ap-api",
+  "module": "index.ts",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "fmt": "prettier --write .",
+    "dev": "bun run --watch src/app.ts",
+    "start": "bun run src/app.ts",
+    "introspect": "drizzle-kit introspect:sqlite --config=./src/config/drizzle.config.ts",
+    "generate_migrations": "bun drizzle-kit generate:sqlite --config=./src/config/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@elysiajs/swagger": "^0.7.4",
+    "@faker-js/faker": "^8.3.1",
+    "@libsql/client": "^0.3.6",
+    "drizzle-orm": "^0.29.1",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.6",
+    "prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

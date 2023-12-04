@@ -1,0 +1,2031 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "id": "5ba2c595-bd2d-4d79-ac74-2ab2cd21a0a2",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "Addresses": {
+      "name": "Addresses",
+      "columns": {
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "Address1": {
+          "name": "Address1",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "Address2": {
+          "name": "Address2",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "City": {
+          "name": "City",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "StateCode": {
+          "name": "StateCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ZipCode": {
+          "name": "ZipCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CountryCode": {
+          "name": "CountryCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Assignments": {
+      "name": "Assignments",
+      "columns": {
+        "AssignmentId": {
+          "name": "AssignmentId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "AuthorizationId": {
+          "name": "AuthorizationId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "CommunityId": {
+          "name": "CommunityId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Assignments_AuthorizationId_Authorizations_AuthorizationId_fk": {
+          "name": "Assignments_AuthorizationId_Authorizations_AuthorizationId_fk",
+          "tableFrom": "Assignments",
+          "tableTo": "Authorizations",
+          "columnsFrom": [
+            "AuthorizationId"
+          ],
+          "columnsTo": [
+            "AuthorizationId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Assignments_CommunityId_Communities_CommunityId_fk": {
+          "name": "Assignments_CommunityId_Communities_CommunityId_fk",
+          "tableFrom": "Assignments",
+          "tableTo": "Communities",
+          "columnsFrom": [
+            "CommunityId"
+          ],
+          "columnsTo": [
+            "CommunityId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Authorizations": {
+      "name": "Authorizations",
+      "columns": {
+        "AuthorizationId": {
+          "name": "AuthorizationId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ContactId": {
+          "name": "ContactId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "RoleId": {
+          "name": "RoleId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "OperatingCompanyId": {
+          "name": "OperatingCompanyId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Authorizations_ContactId_Contacts_ContactId_fk": {
+          "name": "Authorizations_ContactId_Contacts_ContactId_fk",
+          "tableFrom": "Authorizations",
+          "tableTo": "Contacts",
+          "columnsFrom": [
+            "ContactId"
+          ],
+          "columnsTo": [
+            "ContactId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Authorizations_RoleId_Roles_RoleId_fk": {
+          "name": "Authorizations_RoleId_Roles_RoleId_fk",
+          "tableFrom": "Authorizations",
+          "tableTo": "Roles",
+          "columnsFrom": [
+            "RoleId"
+          ],
+          "columnsTo": [
+            "RoleId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Authorizations_OperatingCompanyId_OperatingCompanies_OperatingCompanyId_fk": {
+          "name": "Authorizations_OperatingCompanyId_OperatingCompanies_OperatingCompanyId_fk",
+          "tableFrom": "Authorizations",
+          "tableTo": "OperatingCompanies",
+          "columnsFrom": [
+            "OperatingCompanyId"
+          ],
+          "columnsTo": [
+            "OperatingCompanyId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Communities": {
+      "name": "Communities",
+      "columns": {
+        "CommunityId": {
+          "name": "CommunityId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "CommunityName": {
+          "name": "CommunityName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ShortName": {
+          "name": "ShortName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Abbreviation": {
+          "name": "Abbreviation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DivisionId": {
+          "name": "DivisionId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Communities_AddressId_Addresses_AddressId_fk": {
+          "name": "Communities_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "Communities",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Communities_DivisionId_Divisions_DivisionId_fk": {
+          "name": "Communities_DivisionId_Divisions_DivisionId_fk",
+          "tableFrom": "Communities",
+          "tableTo": "Divisions",
+          "columnsFrom": [
+            "DivisionId"
+          ],
+          "columnsTo": [
+            "DivisionId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "ContactTypes": {
+      "name": "ContactTypes",
+      "columns": {
+        "ContactTypeId": {
+          "name": "ContactTypeId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ContactTypeName": {
+          "name": "ContactTypeName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ContactTypeDescription": {
+          "name": "ContactTypeDescription",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Ranking": {
+          "name": "Ranking",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Contacts": {
+      "name": "Contacts",
+      "columns": {
+        "ContactId": {
+          "name": "ContactId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "PersonId": {
+          "name": "PersonId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "GroupId": {
+          "name": "GroupId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ContactTypeId": {
+          "name": "ContactTypeId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "EmailAddress": {
+          "name": "EmailAddress",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "LastName": {
+          "name": "LastName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "Title": {
+          "name": "Title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ExternalContactIdentifier": {
+          "name": "ExternalContactIdentifier",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "IsBoardMember": {
+          "name": "IsBoardMember",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Contacts_PersonId_Persons_PersonId_fk": {
+          "name": "Contacts_PersonId_Persons_PersonId_fk",
+          "tableFrom": "Contacts",
+          "tableTo": "Persons",
+          "columnsFrom": [
+            "PersonId"
+          ],
+          "columnsTo": [
+            "PersonId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Contacts_GroupId_Groups_GroupId_fk": {
+          "name": "Contacts_GroupId_Groups_GroupId_fk",
+          "tableFrom": "Contacts",
+          "tableTo": "Groups",
+          "columnsFrom": [
+            "GroupId"
+          ],
+          "columnsTo": [
+            "GroupId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Contacts_ContactTypeId_ContactTypes_ContactTypeId_fk": {
+          "name": "Contacts_ContactTypeId_ContactTypes_ContactTypeId_fk",
+          "tableFrom": "Contacts",
+          "tableTo": "ContactTypes",
+          "columnsFrom": [
+            "ContactTypeId"
+          ],
+          "columnsTo": [
+            "ContactTypeId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Divisions": {
+      "name": "Divisions",
+      "columns": {
+        "DivisionId": {
+          "name": "DivisionId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DivisionName": {
+          "name": "DivisionName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ShortName": {
+          "name": "ShortName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Abbreviation": {
+          "name": "Abbreviation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "OperatingCompanyId": {
+          "name": "OperatingCompanyId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Divisions_AddressId_Addresses_AddressId_fk": {
+          "name": "Divisions_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "Divisions",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Divisions_OperatingCompanyId_OperatingCompanies_OperatingCompanyId_fk": {
+          "name": "Divisions_OperatingCompanyId_OperatingCompanies_OperatingCompanyId_fk",
+          "tableFrom": "Divisions",
+          "tableTo": "OperatingCompanies",
+          "columnsFrom": [
+            "OperatingCompanyId"
+          ],
+          "columnsTo": [
+            "OperatingCompanyId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Groups": {
+      "name": "Groups",
+      "columns": {
+        "GroupId": {
+          "name": "GroupId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "GroupName": {
+          "name": "GroupName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ShortName": {
+          "name": "ShortName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Abbreviation": {
+          "name": "Abbreviation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Groups_AddressId_Addresses_AddressId_fk": {
+          "name": "Groups_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "Groups",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Invoices": {
+      "name": "Invoices",
+      "columns": {
+        "InvoiceId": {
+          "name": "InvoiceId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "PaymentTypeId": {
+          "name": "PaymentTypeId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "CommunityId": {
+          "name": "CommunityId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "VendorId": {
+          "name": "VendorId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "InvoiceName": {
+          "name": "InvoiceName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "InvoiceNumber": {
+          "name": "InvoiceNumber",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "InvoiceAmount": {
+          "name": "InvoiceAmount",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ReceivedDate": {
+          "name": "ReceivedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DueDate": {
+          "name": "DueDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Invoices_PaymentTypeId_PaymentTypes_PaymentTypeId_fk": {
+          "name": "Invoices_PaymentTypeId_PaymentTypes_PaymentTypeId_fk",
+          "tableFrom": "Invoices",
+          "tableTo": "PaymentTypes",
+          "columnsFrom": [
+            "PaymentTypeId"
+          ],
+          "columnsTo": [
+            "PaymentTypeId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Invoices_CommunityId_Communities_CommunityId_fk": {
+          "name": "Invoices_CommunityId_Communities_CommunityId_fk",
+          "tableFrom": "Invoices",
+          "tableTo": "Communities",
+          "columnsFrom": [
+            "CommunityId"
+          ],
+          "columnsTo": [
+            "CommunityId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Invoices_VendorId_Vendors_VendorId_fk": {
+          "name": "Invoices_VendorId_Vendors_VendorId_fk",
+          "tableFrom": "Invoices",
+          "tableTo": "Vendors",
+          "columnsFrom": [
+            "VendorId"
+          ],
+          "columnsTo": [
+            "VendorId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Locations": {
+      "name": "Locations",
+      "columns": {
+        "LocationId": {
+          "name": "LocationId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "LocationName": {
+          "name": "LocationName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "VendorId": {
+          "name": "VendorId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "OfficePhone": {
+          "name": "OfficePhone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "MobilePhone": {
+          "name": "MobilePhone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Fax": {
+          "name": "Fax",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Locations_AddressId_Addresses_AddressId_fk": {
+          "name": "Locations_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "Locations",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Locations_VendorId_Vendors_VendorId_fk": {
+          "name": "Locations_VendorId_Vendors_VendorId_fk",
+          "tableFrom": "Locations",
+          "tableTo": "Vendors",
+          "columnsFrom": [
+            "VendorId"
+          ],
+          "columnsTo": [
+            "VendorId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "Locations_AddressId_VendorId_pk": {
+          "columns": [
+            "AddressId",
+            "VendorId"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "OperatingCompanies": {
+      "name": "OperatingCompanies",
+      "columns": {
+        "OperatingCompanyId": {
+          "name": "OperatingCompanyId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "OperatingCompanyName": {
+          "name": "OperatingCompanyName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ShortName": {
+          "name": "ShortName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Abbreviation": {
+          "name": "Abbreviation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "RegionId": {
+          "name": "RegionId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "OperatingCompanies_AddressId_Addresses_AddressId_fk": {
+          "name": "OperatingCompanies_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "OperatingCompanies",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "OperatingCompanies_RegionId_Regions_RegionId_fk": {
+          "name": "OperatingCompanies_RegionId_Regions_RegionId_fk",
+          "tableFrom": "OperatingCompanies",
+          "tableTo": "Regions",
+          "columnsFrom": [
+            "RegionId"
+          ],
+          "columnsTo": [
+            "RegionId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "PaymentTypes": {
+      "name": "PaymentTypes",
+      "columns": {
+        "PaymentTypeId": {
+          "name": "PaymentTypeId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "PaymentTypeName": {
+          "name": "PaymentTypeName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "PaymentTypeDescription": {
+          "name": "PaymentTypeDescription",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Ranking": {
+          "name": "Ranking",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Persons": {
+      "name": "Persons",
+      "columns": {
+        "PersonId": {
+          "name": "PersonId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "EmailAddress": {
+          "name": "EmailAddress",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "FirstName": {
+          "name": "FirstName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "LastName": {
+          "name": "LastName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "Title": {
+          "name": "Title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "PropertyTypes": {
+      "name": "PropertyTypes",
+      "columns": {
+        "PropertyTypeId": {
+          "name": "PropertyTypeId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "PropertyTypeName": {
+          "name": "PropertyTypeName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "PropertyTypeDescription": {
+          "name": "PropertyTypeDescription",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Ranking": {
+          "name": "Ranking",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Regions": {
+      "name": "Regions",
+      "columns": {
+        "RegionId": {
+          "name": "RegionId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "RegionName": {
+          "name": "RegionName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "ShortName": {
+          "name": "ShortName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Abbreviation": {
+          "name": "Abbreviation",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "GroupId": {
+          "name": "GroupId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Regions_AddressId_Addresses_AddressId_fk": {
+          "name": "Regions_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "Regions",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Regions_GroupId_Groups_GroupId_fk": {
+          "name": "Regions_GroupId_Groups_GroupId_fk",
+          "tableFrom": "Regions",
+          "tableTo": "Groups",
+          "columnsFrom": [
+            "GroupId"
+          ],
+          "columnsTo": [
+            "GroupId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Roles": {
+      "name": "Roles",
+      "columns": {
+        "RoleId": {
+          "name": "RoleId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "RoleName": {
+          "name": "RoleName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "RoleDescription": {
+          "name": "RoleDescription",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "Ranking": {
+          "name": "Ranking",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Users": {
+      "name": "Users",
+      "columns": {
+        "UserId": {
+          "name": "UserId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "PersonId": {
+          "name": "PersonId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "AuthenticationIdentifier": {
+          "name": "AuthenticationIdentifier",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "InternalAdministrator": {
+          "name": "InternalAdministrator",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": false
+        },
+        "AcceptedTermsDate": {
+          "name": "AcceptedTermsDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AcceptedTermsVersion": {
+          "name": "AcceptedTermsVersion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Users_PersonId_Persons_PersonId_fk": {
+          "name": "Users_PersonId_Persons_PersonId_fk",
+          "tableFrom": "Users",
+          "tableTo": "Persons",
+          "columnsFrom": [
+            "PersonId"
+          ],
+          "columnsTo": [
+            "PersonId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "Vendors": {
+      "name": "Vendors",
+      "columns": {
+        "VendorId": {
+          "name": "VendorId",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "vendorNumber": {
+          "name": "vendorNumber",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "VendorType": {
+          "name": "VendorType",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "AddressId": {
+          "name": "AddressId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "VendorName": {
+          "name": "VendorName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "OfficePhone": {
+          "name": "OfficePhone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "MobilePhone": {
+          "name": "MobilePhone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "Fax": {
+          "name": "Fax",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "FederalID": {
+          "name": "FederalID",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "AlternateName": {
+          "name": "AlternateName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "AlternateNameType": {
+          "name": "AlternateNameType",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "CreatedDate": {
+          "name": "CreatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "CURRENT_TIMESTAMP"
+        },
+        "CreatedBy": {
+          "name": "CreatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "DeactivatedDate": {
+          "name": "DeactivatedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeactivatedBy": {
+          "name": "DeactivatedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedDate": {
+          "name": "DeletedDate",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "DeletedBy": {
+          "name": "DeletedBy",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "Vendors_AddressId_Addresses_AddressId_fk": {
+          "name": "Vendors_AddressId_Addresses_AddressId_fk",
+          "tableFrom": "Vendors",
+          "tableTo": "Addresses",
+          "columnsFrom": [
+            "AddressId"
+          ],
+          "columnsTo": [
+            "AddressId"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
